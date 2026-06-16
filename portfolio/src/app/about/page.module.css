@@ -1,0 +1,147 @@
+.page {
+  padding-top: var(--nav-height);
+  min-height: 100vh;
+  padding-bottom: var(--space-20);
+}
+
+.inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--space-16) var(--space-6);
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: var(--space-16);
+}
+
+.avatarWrap {
+  margin-bottom: var(--space-6);
+  display: flex;
+  justify-content: center;
+}
+
+.avatarPlaceholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--color-bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  color: var(--color-accent-medium);
+  opacity: 0.6;
+}
+
+.name {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-2);
+}
+
+.title {
+  font-size: var(--text-lg);
+  color: var(--color-accent-medium);
+  font-weight: 500;
+  margin-bottom: var(--space-6);
+}
+
+.bio {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: var(--space-12);
+}
+
+.sectionTitle {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.skillsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.skillGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.skillCategory {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.skillTags {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.contactItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg-secondary);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-border-light);
+  text-decoration: none;
+  transition: border-color var(--transition-fast);
+}
+
+.contactItem:hover {
+  border-color: var(--color-accent-medium);
+}
+
+.contactLabel {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.contactValue {
+  font-size: var(--text-sm);
+  color: var(--color-accent-medium);
+}
+
+.empty {
+  text-align: center;
+  padding: var(--space-20);
+  color: var(--color-text-tertiary);
+}
+
+@media (max-width: 768px) {
+  .inner {
+    padding: var(--space-10) var(--space-4);
+  }
+
+  .intro {
+    margin-bottom: var(--space-10);
+  }
+
+  .avatarPlaceholder {
+    width: 90px;
+    height: 90px;
+    font-size: 28px;
+  }
+}

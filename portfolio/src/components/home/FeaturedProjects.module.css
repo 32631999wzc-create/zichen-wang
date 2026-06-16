@@ -1,0 +1,134 @@
+.section {
+  padding: var(--space-20) var(--space-6);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: var(--space-3);
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-12);
+  font-size: var(--text-lg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.card {
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-light);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform var(--transition-slow), box-shadow var(--transition-base), opacity 0.6s ease;
+}
+
+.section.visible .card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: scale(1.04);
+  box-shadow: var(--shadow-lg);
+}
+
+.imageWrap {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--color-bg-tertiary);
+}
+
+.imageWrap img {
+  transition: transform var(--transition-slow);
+}
+
+.card:hover .imageWrap img {
+  transform: scale(1.08);
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-slow);
+}
+
+.card:hover .placeholder {
+  transform: scale(1.08);
+}
+
+.placeholderIcon {
+  font-size: var(--text-3xl);
+  color: var(--color-accent-medium);
+  opacity: 0.5;
+}
+
+.info {
+  padding: var(--space-4);
+}
+
+.projectTitle {
+  font-size: var(--text-base);
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+}
+
+.type {
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+}
+
+.footer {
+  text-align: center;
+  margin-top: var(--space-10);
+}
+
+.viewAll {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-accent-medium);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  text-decoration: none;
+  transition: gap var(--transition-fast);
+}
+
+.viewAll:hover {
+  gap: var(--space-3);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: var(--space-12) var(--space-4);
+  }
+}

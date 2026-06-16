@@ -1,0 +1,36 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  border-radius: var(--border-radius-full);
+  white-space: nowrap;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+/* Sizes */
+.sm {
+  padding: 2px 10px;
+  font-size: var(--text-xs);
+}
+
+.md {
+  padding: 4px 14px;
+  font-size: var(--text-sm);
+}
+
+/* Variants */
+.default {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-secondary);
+}
+
+.accent {
+  background: var(--color-accent-medium);
+  color: var(--color-text-on-accent);
+}
+
+.outline {
+  background: transparent;
+  color: var(--color-accent-medium);
+  border: 1px solid var(--color-accent-medium);
+}
