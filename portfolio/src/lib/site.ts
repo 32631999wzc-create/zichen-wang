@@ -2,7 +2,7 @@
  * Site configuration — update these values for deployment.
  */
 export const siteConfig = {
-  /** Base URL — change to your actual domain when deploying */
+  /** Base URL — replace with your actual domain after deployment */
   url: "https://zichen-wang.vercel.app",
   name: "王紫晨",
   title: "景观/城市设计师 → AI产品人",
