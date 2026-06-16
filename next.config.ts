@@ -1,15 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Static export for portfolio site
-  output: "export",
-
-  // Image optimization
+  // Image optimization handled by Vercel
   images: {
-    unoptimized: true, // Static export requires this
+    unoptimized: true,
   },
 
-  // Ensure trailing slashes for consistent URLs
+  // Ensure consistent URLs
   trailingSlash: false,
 };
 
