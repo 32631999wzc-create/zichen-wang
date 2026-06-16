@@ -11,7 +11,7 @@ export default function Footer() {
       <div className={styles.inner}>
         <div className={styles.links}>
           <a
-            href="mailto:zichen.wang@example.com"
+            href="mailto:wangzichen0326@126.com"
             className={styles.link}
             target="_blank"
             rel="noopener noreferrer"
@@ -19,7 +19,7 @@ export default function Footer() {
             Email
           </a>
           <a
-            href="https://linkedin.com/in/zichen-wang"
+            href="https://www.linkedin.com/in/zichen-wang-1a3793410"
             className={styles.link}
             target="_blank"
             rel="noopener noreferrer"
@@ -27,7 +27,7 @@ export default function Footer() {
             LinkedIn
           </a>
           <a
-            href="https://github.com/zichenwang"
+            href="https://github.com/32631999wzc-create"
             className={styles.link}
             target="_blank"
             rel="noopener noreferrer"
