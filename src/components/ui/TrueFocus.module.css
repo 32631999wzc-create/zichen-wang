@@ -1,0 +1,29 @@
+.container {
+  --focus-border: #0099ff;
+  --focus-glow: rgba(0, 153, 255, 0.34);
+  position: relative;
+  display: flex;
+  width: max-content;
+  max-width: 100%;
+  flex-wrap: wrap;
+  column-gap: 0.18em;
+  row-gap: 0.02em;
+}
+
+.word { display: inline-block; will-change: filter; }
+.frame { position: absolute; top: 0; left: 0; z-index: 2; pointer-events: none; filter: drop-shadow(0 0 7px var(--focus-glow)); }
+.corner { position: absolute; width: clamp(9px, .18em, 16px); height: clamp(9px, .18em, 16px); border-color: var(--focus-border); }
+.topLeft { top: 0; left: 0; border-top: 1px solid; border-left: 1px solid; }
+.topRight { top: 0; right: 0; border-top: 1px solid; border-right: 1px solid; }
+.bottomLeft { bottom: 0; left: 0; border-bottom: 1px solid; border-left: 1px solid; }
+.bottomRight { right: 0; bottom: 0; border-right: 1px solid; border-bottom: 1px solid; }
+
+@media (prefers-reduced-motion: reduce) {
+  .word { filter: none !important; transition: none !important; }
+  .frame { display: none; }
+}
+
+@media (hover: none) {
+  .word { filter: none !important; }
+  .frame { display: none; }
+}

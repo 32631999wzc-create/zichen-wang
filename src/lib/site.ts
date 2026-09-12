@@ -9,7 +9,7 @@ export const siteConfig = {
   locale: "zh_CN",
   name: "王紫晨",
   nameEn: "Zichen Wang",
-  title: "空间设计师 × AI 产品构建者",
+  title: "Urban Designer × AI explorer",
   description: "王紫晨的跨尺度设计实践：从景观与城市系统，到可验证、可执行的 AI 产品。",
   profile: {
     role: "景观/城市设计师 → AI 产品人",
@@ -32,8 +32,8 @@ export const siteConfig = {
   home: {
     eyebrow: "王紫晨 / ZICHEN WANG · 2026",
     identities: [
-      { id: "design", index: "01 — DESIGN / SPACE", title: ["空间", "设计师"], titleEn: "Spatial & Urban Designer", statement: ["把模糊的关系，", "画成可感知的空间。"], statementEn: ["Turning hidden relationships", "into places you can feel."] },
-      { id: "product", index: "02 — PRODUCT / SYSTEM", title: ["AI 产品", "构建者"], titleEn: "AI Product Builder", statement: ["把复杂的流程，", "做成真正运行的产品。"], statementEn: ["Turning complex workflows", "into products that work."] },
+      { id: "design", index: "01 — DESIGN / SPACE", title: "Urban Designer", statement: ["把模糊的关系，", "画成可感知的空间。"], statementEn: ["Turning hidden relationships", "into places you can feel."] },
+      { id: "product", index: "02 — PRODUCT / SYSTEM", title: "AI explorer", statement: ["把复杂的流程，", "做成真正运行的产品。"], statementEn: ["Turning complex workflows", "into products that work."] },
     ],
     vocabulary: ["HTML", "FIGMA", "AGENT", "HARNESS", "PYTHON"],
     selectedWorkLabel: "SELECTED WORK",

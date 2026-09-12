@@ -1,4 +1,5 @@
 node_modules/
+.npm-cache/
 .next/
 out/
 .env
@@ -12,4 +13,3 @@ lh-*.json
 .specify/
 .claude/
 portfolio/
-
