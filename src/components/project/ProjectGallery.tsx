@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import { assetPath } from "@/lib/paths";
 import styles from "./ProjectGallery.module.css";
 
 interface ProjectGalleryProps {
@@ -26,13 +28,11 @@ export default function ProjectGallery({
   return (
     <div className={styles.gallery}>
       <div className={styles.main}>
-        <div className={styles.placeholderLarge}>
-          <span className={styles.placeholderIcon}>◆</span>
-        </div>
+        <Image src={assetPath(images[selected])} alt={`${title}项目图片 ${selected + 1}`} fill sizes="(max-width: 1023px) 100vw, 820px" priority={selected === 0} />
       </div>
       {images.length > 1 && (
         <div className={styles.thumbs}>
-          {images.map((_, i) => (
+          {images.map((image, i) => (
             <button
               key={i}
               className={`${styles.thumb} ${
@@ -41,7 +41,7 @@ export default function ProjectGallery({
               onClick={() => setSelected(i)}
               aria-label={`查看图片 ${i + 1}`}
             >
-              <span className={styles.thumbPlaceholder}>◆</span>
+              <Image src={assetPath(image)} alt="" fill sizes="80px" />
             </button>
           ))}
         </div>

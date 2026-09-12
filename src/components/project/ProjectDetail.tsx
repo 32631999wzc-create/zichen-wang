@@ -38,6 +38,15 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
             <Tag key={tag} label={tag} size="sm" />
           ))}
         </div>
+        {frontmatter.links && frontmatter.links.length > 0 && (
+          <div className={styles.links}>
+            {frontmatter.links.map((link) => (
+              <a key={link.url} href={link.url} target="_blank" rel="noreferrer">
+                {link.label} ↗
+              </a>
+            ))}
+          </div>
+        )}
       </header>
 
       {/* Gallery */}

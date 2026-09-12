@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import { assetPath } from "@/lib/paths";
 import Tag from "@/components/ui/Tag";
 import styles from "./ProjectCard.module.css";
 
@@ -10,6 +12,7 @@ interface ProjectCardProps {
   cover: string;
   tags: string[];
   status: string;
+  priority?: boolean;
 }
 
 export default function ProjectCard({
@@ -17,15 +20,15 @@ export default function ProjectCard({
   title,
   type,
   date,
+  cover,
   tags,
   status,
+  priority = false,
 }: ProjectCardProps) {
   return (
     <Link href={`/projects/${slug}`} className={styles.card}>
       <div className={styles.imageWrap}>
-        <div className={styles.placeholder}>
-          <span className={styles.placeholderIcon}>◆</span>
-        </div>
+        <Image src={assetPath(cover)} alt={`${title}项目封面`} fill sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw" priority={priority} />
         <div className={styles.overlay}>
           <span className={styles.viewLabel}>查看详情</span>
         </div>

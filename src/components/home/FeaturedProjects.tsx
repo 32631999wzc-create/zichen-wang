@@ -17,9 +17,8 @@ interface FeaturedProjectsProps {
 }
 
 export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
-  if (projects.length === 0) return null;
-
   const { ref, inView } = useInView({ threshold: 0.05 });
+  if (projects.length === 0) return null;
 
   return (
     <section

@@ -1,26 +1,35 @@
 ---
-title: "项目一名称"
-type: "景观设计"
-date: "2024-06"
-location: "杭州市"
-role: "主创设计师"
-status: "已建成"
-tags: ["公共空间", "生态修复"]
-cover: "/images/projects/project-01/cover.jpg"
+title: "适应 / Adaptation"
+type: "景观与城市设计"
+category: "design"
+date: "2024-01"
+location: "Buffalo, USA"
+role: "独立设计"
+status: "学术项目"
+tags: ["极端天气", "韧性城市", "季节性基础设施"]
+cover: "/images/projects/adaptation/cover.webp"
+gallery: ["/images/projects/adaptation/cover.webp", "/images/projects/adaptation/system.webp", "/images/projects/adaptation/seasons.webp"]
+featured: true
+homeOrder: 1
+homeNumber: "01"
+homeTitle: "适应"
+homeTitleEn: "Adaptation"
+homeSummary: "把极端暴雪从城市负担转化为可收集、净化与再利用的季节性基础设施。"
+homeTone: "lilac"
 ---
 
-## 项目背景
+## 项目命题 / Challenge
 
-这里是项目的背景介绍。描述项目的起因、地点、规模等信息。
+Buffalo 每年面对持续暴雪、积雪运输压力与融雪污染。项目不把雪仅视为需要清除的负担，而是把它重新定义为城市可以收集、管理、净化与利用的季节性资源。
 
-## 设计过程
+## 系统策略 / System
 
-这里描述设计思路和过程。包括设计理念、方法、迭代过程等。
+方案以降雪量、道路优先级与公共空间为依据，构建社区收集、公共道路处理和绿地净化三类节点。不同尺度的节点共同形成一套可随季节变化的城市雪管理网络。
 
-## 成果
+## 空间结果 / Outcome
 
-这里描述最终的成果和影响。
+冬季，系统承担收雪、储雪和安全通行；春夏季，基础设施转化为雨洪、休憩和社区活动空间。设计因此不是一次性的极端天气应对，而是一种可适应的公共空间机制。
 
-## 反思
+## 方法迁移 / Transfer
 
-对项目的反思，以及这段经历对转型AI产品的启发。
+这个项目训练了我把天气、人流、维护与空间节点组织成连续状态的能力。相同的方法后来进入 PlantSim：把静态方案转化为可推演、可比较的未来情景。

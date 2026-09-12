@@ -1,82 +1,47 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import ThemeToggle from "@/components/ui/ThemeToggle";
-import MobileNav from "@/components/layout/MobileNav";
+import { useEffect, useRef, useState } from "react";
+import { siteConfig } from "@/lib/site";
 import styles from "./Header.module.css";
 
-const navLinks = [
-  { href: "/", label: "首页" },
-  { href: "/projects", label: "作品集" },
-  { href: "/experience", label: "经历" },
-  { href: "/blog", label: "博客" },
-  { href: "/about", label: "关于我" },
-];
-
 export default function Header() {
-  const pathname = usePathname();
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [dimmed, setDimmed] = useState(false);
+  const previousY = useRef(0);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    let ticking = false;
+    const update = () => {
+      const currentY = window.scrollY;
+      if (currentY < 40) setDimmed(false);
+      else if (currentY > previousY.current + 6) setDimmed(true);
+      else if (currentY < previousY.current - 6) setDimmed(false);
+      previousY.current = currentY;
+      ticking = false;
+    };
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    };
+    previousY.current = window.scrollY;
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
-
   return (
-    <>
-      <header
-        className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}
-      >
-        <div className={styles.inner}>
-          <Link href="/" className={styles.logo}>
-            <span className={styles.logoMark} />
-            <span className={styles.logoText}>Portfolio</span>
-          </Link>
-
-          <nav className={styles.desktopNav} aria-label="主导航">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`${styles.navLink} ${
-                  pathname === link.href ? styles.active : ""
-                }`}
-                aria-current={pathname === link.href ? "page" : undefined}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          <div className={styles.actions}>
-            <ThemeToggle />
-            <button
-              className={styles.hamburger}
-              onClick={() => setMobileOpen(true)}
-              aria-label="打开导航菜单"
-            >
-              <span className={styles.hamburgerLine} />
-              <span className={styles.hamburgerLine} />
-              <span className={styles.hamburgerLine} />
-            </button>
-          </div>
-        </div>
-      </header>
-
-      <MobileNav
-        links={navLinks}
-        currentPath={pathname}
-        isOpen={mobileOpen}
-        onClose={() => setMobileOpen(false)}
-      />
-    </>
+    <header className={`${styles.header} ${dimmed ? styles.dimmed : ""}`}>
+      <div className={styles.inner}>
+        <Link href="/" className={styles.logo} aria-label={`${siteConfig.name}个人网站首页`}>
+          <span className={styles.logoMark}>ZW</span>
+          <span className={styles.logoMeta}>{siteConfig.name}<br />{siteConfig.nameEn}</span>
+        </Link>
+        <nav className={styles.nav} aria-label="主导航">
+          {siteConfig.navigation.map((link) => <Link key={link.href} href={link.href} className={styles.navLink}>{link.label}</Link>)}
+        </nav>
+        <a href={`mailto:${siteConfig.contact.email}`} className={styles.contact}>联系我 <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
   );
 }

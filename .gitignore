@@ -4,6 +4,7 @@ out/
 .env
 .env.local
 *.log
+*.tsbuildinfo
 .DS_Store
 Thumbs.db
 lighthouse-*.json
@@ -11,5 +12,4 @@ lh-*.json
 .specify/
 .claude/
 portfolio/
-
 

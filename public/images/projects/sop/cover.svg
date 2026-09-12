@@ -1,0 +1,19 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#101010"/>
+  <path d="M0 80H1600M0 160H1600M0 240H1600M0 320H1600M0 400H1600M0 480H1600M0 560H1600M0 640H1600M0 720H1600M0 800H1600M0 880H1600M80 0V1000M160 0V1000M240 0V1000M320 0V1000M400 0V1000M480 0V1000M560 0V1000M640 0V1000M720 0V1000M800 0V1000M880 0V1000M960 0V1000M1040 0V1000M1120 0V1000M1200 0V1000M1280 0V1000M1360 0V1000M1440 0V1000M1520 0V1000" stroke="#1D1D1D"/>
+  <rect x="150" y="165" width="270" height="98" rx="20" fill="#171717" stroke="#3A3A3A"/>
+  <rect x="665" y="165" width="270" height="98" rx="20" fill="#171717" stroke="#3A3A3A"/>
+  <rect x="1180" y="165" width="270" height="98" rx="20" fill="#171717" stroke="#3A3A3A"/>
+  <text x="285" y="226" text-anchor="middle" fill="#8C8C8C" font-family="Arial" font-size="26" letter-spacing="4">PROFILE</text>
+  <text x="800" y="226" text-anchor="middle" fill="#8C8C8C" font-family="Arial" font-size="26" letter-spacing="4">PLAN</text>
+  <text x="1315" y="226" text-anchor="middle" fill="#8C8C8C" font-family="Arial" font-size="26" letter-spacing="4">EVIDENCE</text>
+  <path d="M420 214H665M935 214H1180" stroke="#4A4A4A" stroke-width="3"/>
+  <rect x="485" y="350" width="630" height="300" rx="42" fill="url(#g)"/>
+  <text x="800" y="455" text-anchor="middle" fill="white" font-family="Arial" font-size="24" letter-spacing="7">KERNEL / ROUTER</text>
+  <text x="800" y="555" text-anchor="middle" fill="white" font-family="Arial" font-size="94" font-weight="700" letter-spacing="-6">AI PRODUCT</text>
+  <text x="800" y="604" text-anchor="middle" fill="white" font-family="Arial" font-size="30" letter-spacing="9">DEVELOPMENT SOP</text>
+  <path d="M800 263V350M800 650V752" stroke="#6B6B6B" stroke-width="3"/>
+  <rect x="280" y="752" width="1040" height="90" rx="18" fill="#171717" stroke="#4A4A4A"/>
+  <text x="800" y="808" text-anchor="middle" fill="#BDBDBD" font-family="Arial" font-size="24" letter-spacing="7">GATE · VALIDATE · TRACE</text>
+  <defs><linearGradient id="g" x1="485" y1="350" x2="1115" y2="650" gradientUnits="userSpaceOnUse"><stop stop-color="#6A4CF5"/><stop offset=".55" stop-color="#B443ED"/><stop offset="1" stop-color="#FF5577"/></linearGradient></defs>
+</svg>

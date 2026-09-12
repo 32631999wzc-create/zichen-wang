@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/lib/theme";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SkipLink from "@/components/ui/SkipLink";
@@ -47,38 +46,21 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              name: "王紫晨",
-              alternateName: "Zichen Wang",
+              name: siteConfig.name,
+              alternateName: siteConfig.nameEn,
               description: siteConfig.description,
               url: siteConfig.url,
               knowsAbout: ["景观设计", "城市设计", "AI产品", "产品管理"],
+              sameAs: [siteConfig.contact.linkedin, siteConfig.contact.github],
             }),
-          }}
-        />
-        {/* Prevent FOUC - set theme before React hydrates */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var theme = localStorage.getItem('portfolio-theme');
-                  if (!theme) {
-                    theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                  }
-                  document.documentElement.setAttribute('data-theme', theme);
-                } catch(e) {}
-              })();
-            `,
           }}
         />
       </head>
       <body>
         <SkipLink />
-        <ThemeProvider>
-          <Header />
-          <main id="main-content">{children}</main>
-          <Footer />
-        </ThemeProvider>
+        <Header />
+        <main id="main-content">{children}</main>
+        <Footer />
       </body>
     </html>
   );

@@ -78,7 +78,7 @@
   flex-wrap: wrap;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .inner {
     padding: var(--space-10) var(--space-4);
   }

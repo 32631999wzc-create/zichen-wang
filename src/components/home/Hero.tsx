@@ -10,7 +10,7 @@ interface HeroProps {
   subtitle: string;
 }
 
-export default function Hero({ name, title, subtitle }: HeroProps) {
+export default function Hero({ name, subtitle }: HeroProps) {
   const { ref, inView } = useInView({ threshold: 0.1 });
 
   return (

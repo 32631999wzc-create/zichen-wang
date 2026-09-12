@@ -132,7 +132,7 @@
   line-height: 1.6;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .section {
     padding: var(--space-12) var(--space-4);
   }

@@ -145,7 +145,7 @@
   margin: var(--space-8) 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .article {
     padding: var(--space-8) var(--space-4);
   }

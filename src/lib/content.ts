@@ -9,6 +9,7 @@ const contentDir = path.join(process.cwd(), "src", "content");
 export interface ProjectFrontmatter {
   title: string;
   type: string;
+  category: "design" | "product";
   date: string;
   location?: string;
   role?: string;
@@ -17,6 +18,15 @@ export interface ProjectFrontmatter {
   cover: string;
   gallery?: string[];
   links?: { label: string; url: string }[];
+  featured?: boolean;
+  homeOrder?: number;
+  homeNumber?: string;
+  homeTitle?: string;
+  homeTitleEn?: string;
+  homeSummary?: string;
+  homeTone?: "lilac" | "steel" | "forest";
+  homeLayout?: "feature" | "system";
+  homeEyebrow?: string;
 }
 
 export interface Project {
@@ -59,6 +69,12 @@ export function getProjectBySlug(slug: string): Project | null {
   };
 }
 
+export function getFeaturedProjects(category: ProjectFrontmatter["category"]): Omit<Project, "content">[] {
+  return getAllProjects()
+    .filter((project) => project.frontmatter.featured && project.frontmatter.category === category)
+    .sort((a, b) => (a.frontmatter.homeOrder ?? 999) - (b.frontmatter.homeOrder ?? 999));
+}
+
 // ─── Experiences ──────────────────────────────────────────
 
 export interface Experience {
@@ -79,30 +95,6 @@ export function getExperiences(): Experience[] {
 
   const raw = fs.readFileSync(filePath, "utf-8");
   return JSON.parse(raw) as Experience[];
-}
-
-// ─── Profile ───────────────────────────────────────────────
-
-export interface Profile {
-  name: string;
-  title: string;
-  bio: string;
-  avatar: string;
-  email: string;
-  social: {
-    linkedin?: string;
-    github?: string;
-    twitter?: string;
-  };
-  skills: { category: string; items: string[] }[];
-}
-
-export function getProfile(): Profile | null {
-  const filePath = path.join(contentDir, "profile.json");
-  if (!fs.existsSync(filePath)) return null;
-
-  const raw = fs.readFileSync(filePath, "utf-8");
-  return JSON.parse(raw) as Profile;
 }
 
 // ─── Blog Posts ────────────────────────────────────────────

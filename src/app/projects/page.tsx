@@ -25,7 +25,7 @@ export default function ProjectsPage() {
           </div>
         ) : (
           <div className={styles.grid}>
-            {projects.map((project) => (
+            {projects.map((project, index) => (
               <ProjectCard
                 key={project.slug}
                 slug={project.slug}
@@ -35,6 +35,7 @@ export default function ProjectsPage() {
                 cover={project.frontmatter.cover}
                 tags={project.frontmatter.tags}
                 status={project.frontmatter.status}
+                priority={index === 0}
               />
             ))}
           </div>

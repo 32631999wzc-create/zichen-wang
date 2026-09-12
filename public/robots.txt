@@ -1,4 +1,0 @@
-User-Agent: *
-Allow: /
-
-Sitemap: https://zichen-wang.vercel.app/sitemap.xml
