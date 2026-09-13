@@ -19,6 +19,11 @@
 .nameNote small { color: #aaa; text-align: right; }
 .scrollCue { position: absolute; left: 0; bottom: 30px; display: flex; align-items: center; gap: 18px; color: #777; font-family: var(--font-mono); font-size: 9px; letter-spacing: .12em; }
 .scrollCue span { display: grid; width: 32px; height: 32px; place-items: center; border: 1px solid #333; border-radius: 50%; }
+.portraitCarousel { width: min(calc(100% - 40px), var(--max-width)); margin: 0 auto; padding: 110px 0; display: grid; grid-template-columns: .62fr 1.38fr; align-items: center; gap: 70px; border-top: 1px solid #222; }
+.portraitCarouselCopy h2 { margin-top: 22px; font-size: clamp(44px, 5.2vw, 76px); font-weight: 500; line-height: .94; letter-spacing: -.075em; }
+.portraitCarouselCopy h2 span { color: #555; }
+.portraitCarouselCopy > p:last-child { margin-top: 28px; color: #777; font-size: 12px; line-height: 1.75; }
+.portraitCarouselStage { height: 520px; min-width: 0; }
 .section, .path, .contact { width: min(calc(100% - 40px), var(--max-width)); margin: 0 auto; padding: 140px 0; border-top: 1px solid #222; }
 .sectionHeader { display: flex; align-items: end; justify-content: space-between; gap: 50px; margin-bottom: 58px; }
 .sectionHeader h2, .practiceIntro h2, .pathTitle h2, .contact h2 { margin-top: 22px; font-size: clamp(48px, 6vw, 86px); font-weight: 500; line-height: .95; letter-spacing: -.075em; }
@@ -77,11 +82,13 @@
 .contactList { border-top: 1px solid #333; }.contactList a { display: grid; grid-template-columns: 100px 1fr auto; align-items: center; gap: 20px; padding: 24px 4px; border-bottom: 1px solid #292929; transition: padding var(--transition-base), color var(--transition-fast); }.contactList a:hover { padding-left: 14px; color: #0099ff; }.contactList span { color: #666; font-family: var(--font-mono); font-size: 9px; letter-spacing: .1em; }.contactList strong { font-size: 14px; font-weight: 500; }.contactList i { font-style: normal; }
 @media (max-width: 1023px) {
   .hero { min-height: auto; grid-template-columns: 1fr; padding-bottom: 90px; }.nameScene { height: 440px; }.scrollCue { display: none; }
+  .portraitCarousel { grid-template-columns: 1fr; gap: 46px; }.portraitCarouselCopy { max-width: 620px; }.portraitCarouselStage { height: 480px; }
   .factsGrid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }.nameCard { grid-column: span 2; grid-row: auto; min-height: 500px; }.factCard { min-height: 380px; }
   .practiceSection, .contact { grid-template-columns: 1fr; }.practiceIntro { position: static; }.pathCards { grid-template-columns: 1fr; }.pathConnector { flex-direction: row; }.pathConnector i { width: 80px; height: 1px; }
 }
 @media (max-width: 767px) {
-  .hero, .section, .path, .contact { width: calc(100% - 24px); }.hero { padding-top: 78px; }.heroCopy h1 { font-size: clamp(54px, 17vw, 78px); }.nameScene { height: 390px; border-radius: 22px; }.nameNote { grid-template-columns: 1fr auto; }.nameNote small { display: none; }
+  .hero, .portraitCarousel, .section, .path, .contact { width: calc(100% - 24px); }.hero { padding-top: 78px; }.heroCopy h1 { font-size: clamp(54px, 17vw, 78px); }.nameScene { height: 390px; border-radius: 22px; }.nameNote { grid-template-columns: 1fr auto; }.nameNote small { display: none; }
+  .portraitCarousel { padding: 92px 0; gap: 38px; }.portraitCarouselStage { height: 410px; }
   .section, .path, .contact { padding: 92px 0; }.sectionHeader { align-items: flex-start; flex-direction: column; }.sectionHeader > p { text-align: left; }
   .factsGrid { grid-template-columns: 1fr; }.nameCard { grid-column: auto; min-height: 500px; }.factCard { min-height: 370px; padding: 24px; }
   .esfjCopy { width: 66%; }.caregiverArt { right: -24px; width: 52%; opacity: .88; }

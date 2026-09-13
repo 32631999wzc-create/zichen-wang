@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import ContactLinks from "@/components/ui/ContactLinks";
+import RoundCarousel from "@/components/ui/RoundCarousel";
 import { assetPath } from "@/lib/paths";
 import { siteConfig } from "@/lib/site";
 import styles from "./page.module.css";
@@ -19,6 +20,17 @@ const practices = [
 ];
 
 export default function AboutPage() {
+  const portraitFrames = [
+    { src: assetPath("/images/about/personal/portrait-01.jpg"), position: "50% 44%" },
+    { src: assetPath("/images/about/personal/portrait-02.jpg"), position: "50% 50%" },
+    { src: assetPath("/images/about/personal/portrait-03.jpg"), position: "50% 46%" },
+    { src: assetPath("/images/about/personal/portrait-04.jpg"), position: "50% 44%" },
+    { src: assetPath("/images/about/personal/portrait-05.jpg"), position: "50% 42%" },
+    { src: assetPath("/images/about/personal/portrait-06.jpg"), position: "50% 36%" },
+    { src: assetPath("/images/about/personal/portrait-07.jpg"), position: "50% 42%" },
+    { src: assetPath("/images/about/personal/portrait-08.jpg"), position: "28% 50%" },
+    { src: assetPath("/images/about/personal/portrait-09.jpg"), position: "50% 70%" },
+  ];
   return (
     <div className={styles.page}>
       <section className={styles.hero} aria-labelledby="about-title">
@@ -35,6 +47,17 @@ export default function AboutPage() {
           <div className={styles.nameNote}><span>AT DAWN / 清晨</span><strong>紫色朝霞</strong><small>the violet light of dawn</small></div>
         </div>
         <a href="#fun-facts" className={styles.scrollCue}>MORE ABOUT ME <span>↓</span></a>
+      </section>
+
+      <section className={styles.portraitCarousel} aria-labelledby="portrait-carousel-title">
+        <header className={styles.portraitCarouselCopy}>
+          <p className={styles.eyebrow}>A FEW FRAMES OF ME</p>
+          <h2 id="portrait-carousel-title">本人出镜，<br /><span>转着认识。</span></h2>
+          <p>拖动照片环，换一个角度。<br />A portrait, seen from more than one side.</p>
+        </header>
+        <div className={styles.portraitCarouselStage}>
+          <RoundCarousel images={portraitFrames} />
+        </div>
       </section>
 
       <section id="fun-facts" className={styles.section} aria-labelledby="facts-title">
