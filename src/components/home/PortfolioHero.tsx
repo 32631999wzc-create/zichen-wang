@@ -4,6 +4,7 @@ import { useState } from "react";
 import { siteConfig } from "@/lib/site";
 import styles from "@/app/home.module.css";
 import TrueFocus from "@/components/ui/TrueFocus";
+import InteractiveCharacter from "@/components/home/InteractiveCharacter";
 
 export default function PortfolioHero() {
   const [design, product] = siteConfig.home.identities;
@@ -15,6 +16,7 @@ export default function PortfolioHero() {
         <div className={styles.spatialField}><i /><i /><i /><i /></div>
         <div className={styles.systemField}><i /><i /><i /><i /><i /><i /></div>
       </div>
+      <InteractiveCharacter />
       <Identity active={activeIdentity === "design"} identity={design} heading="h1" onActivate={() => setActiveIdentity("design")} />
       <Identity active={activeIdentity === "product"} identity={product} heading="h2" onActivate={() => setActiveIdentity("product")} />
       <div className={styles.productVocabulary} aria-label="产品构建工具">
