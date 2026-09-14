@@ -1,32 +1,13 @@
 .page { padding-top: var(--nav-height); background: #090909; }
 .eyebrow { color: #777; font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; }
-.hero { position: relative; width: min(calc(100% - 40px), var(--max-width)); min-height: 720px; margin: 0 auto; padding: 110px 0 56px; display: grid; grid-template-columns: 1.15fr .85fr; gap: 60px; align-items: center; overflow: hidden; }
-.heroGrid { position: absolute; inset: 0; opacity: .6; background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px); background-size: 42px 42px; mask-image: linear-gradient(90deg, #000, transparent 75%); pointer-events: none; }
-.heroCopy { position: relative; z-index: 1; }
-.heroCopy h1 { margin: 26px 0 20px; font-size: clamp(62px, 8.3vw, 120px); font-weight: 500; line-height: .9; letter-spacing: -.085em; }
-.heroCopy h1 span { color: #555; }
-.heroEn { color: #6f6f6f; font-size: 13px; }
-.intro { max-width: 610px; margin-top: 46px; color: #b7b7b7; font-size: clamp(16px, 1.5vw, 20px); line-height: 1.75; }
-.nameScene { position: relative; height: 500px; overflow: hidden; border-radius: 30px; background: #17101f; box-shadow: 0 40px 100px rgba(106,76,245,.18); }
-.nameScene::before { content: ""; position: absolute; z-index: 1; inset: 0; background: linear-gradient(180deg, rgba(9,9,9,.02) 40%, rgba(9,9,9,.84) 100%); pointer-events: none; }
-.nameScene::after { content: ""; position: absolute; z-index: 2; inset: 14px; border: 1px solid rgba(255,255,255,.15); border-radius: 20px; pointer-events: none; }
-.sceneArtwork { object-fit: cover; transition: transform 900ms cubic-bezier(.2,.7,.2,1), filter 500ms ease; }
-.nameScene:hover .sceneArtwork { filter: saturate(1.08); transform: scale(1.035); }
-.sceneMonogram { position: absolute; z-index: 3; top: 29px; right: 29px; display: grid; width: 58px; height: 58px; place-items: center; border: 1px solid rgba(255,255,255,.35); border-radius: 50%; background: rgba(18,10,31,.28); color: #fff; font-size: 23px; backdrop-filter: blur(10px); }
-.nameNote { position: absolute; left: 28px; right: 28px; bottom: 25px; z-index: 3; display: grid; grid-template-columns: auto 1fr auto; align-items: end; gap: 20px; }
-.nameNote span, .nameNote small { font-family: var(--font-mono); font-size: 9px; letter-spacing: .1em; }
-.nameNote strong { font-size: 24px; font-weight: 500; }
-.nameNote small { color: #aaa; text-align: right; }
-.scrollCue { position: absolute; left: 0; bottom: 30px; display: flex; align-items: center; gap: 18px; color: #777; font-family: var(--font-mono); font-size: 9px; letter-spacing: .12em; }
-.scrollCue span { display: grid; width: 32px; height: 32px; place-items: center; border: 1px solid #333; border-radius: 50%; }
 .portraitCarousel { width: min(calc(100% - 40px), var(--max-width)); margin: 0 auto; padding: 110px 0; display: grid; grid-template-columns: .62fr 1.38fr; align-items: center; gap: 70px; border-top: 1px solid #222; }
 .portraitCarouselCopy h2 { margin-top: 22px; font-size: clamp(44px, 5.2vw, 76px); font-weight: 500; line-height: .94; letter-spacing: -.075em; }
 .portraitCarouselCopy h2 span { color: #555; }
 .portraitCarouselCopy > p:last-child { margin-top: 28px; color: #777; font-size: 12px; line-height: 1.75; }
 .portraitCarouselStage { height: 520px; min-width: 0; }
-.section, .path, .contact { width: min(calc(100% - 40px), var(--max-width)); margin: 0 auto; padding: 140px 0; border-top: 1px solid #222; }
+.section, .path { width: min(calc(100% - 40px), var(--max-width)); margin: 0 auto; padding: 140px 0; border-top: 1px solid #222; }
 .sectionHeader { display: flex; align-items: end; justify-content: space-between; gap: 50px; margin-bottom: 58px; }
-.sectionHeader h2, .practiceIntro h2, .pathTitle h2, .contact h2 { margin-top: 22px; font-size: clamp(48px, 6vw, 86px); font-weight: 500; line-height: .95; letter-spacing: -.075em; }
+.sectionHeader h2, .practiceIntro h2, .pathTitle h2 { margin-top: 22px; font-size: clamp(48px, 6vw, 86px); font-weight: 500; line-height: .95; letter-spacing: -.075em; }
 .sectionHeader > p { color: #777; font-size: 12px; text-align: right; line-height: 1.8; }
 .sectionHeader > p span { color: #aaa; }
 .factsGrid { display: grid; grid-template-columns: 1.2fr .8fr; grid-template-rows: 430px 370px; gap: 16px; }
@@ -78,20 +59,16 @@
 .pathTitle { max-width: 760px; }.pathCards { display: grid; grid-template-columns: 1fr 130px 1fr; align-items: stretch; gap: 18px; margin-top: 65px; }
 .pathCards article { min-height: 270px; padding: 30px; border-radius: 22px; background: #151515; }.pathCards article > span, .pathCards small { color: #666; font-family: var(--font-mono); font-size: 9px; letter-spacing: .1em; }.pathCards h3 { margin-top: 80px; font-size: 31px; font-weight: 500; letter-spacing: -.05em; }.pathCards p { margin-top: 8px; color: #aaa; font-size: 14px; }.pathCards small { display: block; margin-top: 3px; }
 .pathConnector { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: #666; font-size: 10px; }.pathConnector i { width: 1px; height: 80px; background: #333; }
-.contact { display: grid; grid-template-columns: .85fr 1.15fr; align-items: end; gap: 90px; }.contact h2 { font-size: clamp(48px, 5.7vw, 80px); }.contact > div:first-child > p:last-child { margin-top: 18px; color: #666; font-size: 11px; }
-.contactList { border-top: 1px solid #333; }.contactList a { display: grid; grid-template-columns: 100px 1fr auto; align-items: center; gap: 20px; padding: 24px 4px; border-bottom: 1px solid #292929; transition: padding var(--transition-base), color var(--transition-fast); }.contactList a:hover { padding-left: 14px; color: #0099ff; }.contactList span { color: #666; font-family: var(--font-mono); font-size: 9px; letter-spacing: .1em; }.contactList strong { font-size: 14px; font-weight: 500; }.contactList i { font-style: normal; }
 @media (max-width: 1023px) {
-  .hero { min-height: auto; grid-template-columns: 1fr; padding-bottom: 90px; }.nameScene { height: 440px; }.scrollCue { display: none; }
   .portraitCarousel { grid-template-columns: 1fr; gap: 46px; }.portraitCarouselCopy { max-width: 620px; }.portraitCarouselStage { height: 480px; }
   .factsGrid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }.nameCard { grid-column: span 2; grid-row: auto; min-height: 500px; }.factCard { min-height: 380px; }
-  .practiceSection, .contact { grid-template-columns: 1fr; }.practiceIntro { position: static; }.pathCards { grid-template-columns: 1fr; }.pathConnector { flex-direction: row; }.pathConnector i { width: 80px; height: 1px; }
+  .practiceSection { grid-template-columns: 1fr; }.practiceIntro { position: static; }.pathCards { grid-template-columns: 1fr; }.pathConnector { flex-direction: row; }.pathConnector i { width: 80px; height: 1px; }
 }
 @media (max-width: 767px) {
-  .hero, .portraitCarousel, .section, .path, .contact { width: calc(100% - 24px); }.hero { padding-top: 78px; }.heroCopy h1 { font-size: clamp(54px, 17vw, 78px); }.nameScene { height: 390px; border-radius: 22px; }.nameNote { grid-template-columns: 1fr auto; }.nameNote small { display: none; }
+  .portraitCarousel, .section, .path { width: calc(100% - 24px); }
   .portraitCarousel { padding: 92px 0; gap: 38px; }.portraitCarouselStage { height: 410px; }
-  .section, .path, .contact { padding: 92px 0; }.sectionHeader { align-items: flex-start; flex-direction: column; }.sectionHeader > p { text-align: left; }
+  .section, .path { padding: 92px 0; }.sectionHeader { align-items: flex-start; flex-direction: column; }.sectionHeader > p { text-align: left; }
   .factsGrid { grid-template-columns: 1fr; }.nameCard { grid-column: auto; min-height: 500px; }.factCard { min-height: 370px; padding: 24px; }
   .esfjCopy { width: 66%; }.caregiverArt { right: -24px; width: 52%; opacity: .88; }
   .practiceSection { gap: 50px; }.practiceMap { padding: 22px 18px; }.toolLine { flex-direction: column; }.toolLine p { text-align: left; line-height: 1.7; }
-  .contact { gap: 48px; }.contactList a { grid-template-columns: 75px 1fr auto; gap: 10px; }.contactList strong { font-size: 12px; overflow-wrap: anywhere; }
 }

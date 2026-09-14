@@ -1,7 +1,6 @@
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
-import ContactLinks from "@/components/ui/ContactLinks";
 import RoundCarousel from "@/components/ui/RoundCarousel";
 import { assetPath } from "@/lib/paths";
 import { siteConfig } from "@/lib/site";
@@ -33,22 +32,6 @@ export default function AboutPage() {
   ];
   return (
     <div className={styles.page}>
-      <section className={styles.hero} aria-labelledby="about-title">
-        <div className={styles.heroGrid} aria-hidden="true" />
-        <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>ABOUT / THE PERSON BEHIND THE SYSTEMS</p>
-          <h1 id="about-title">认真做系统，<br /><span>轻松过生活。</span></h1>
-          <p className={styles.heroEn}>Serious about systems. Not always about being serious.</p>
-          <p className={styles.intro}>{siteConfig.profile.intro}</p>
-        </div>
-        <div className={styles.nameScene} aria-label="名字来自出生时紫色朝霞的意象">
-          <Image className={styles.sceneArtwork} src={assetPath("/images/about/violet-dawn-editorial.png")} alt="紫橙色朝霞中的层叠山峦与晨雾插画" fill priority sizes="(max-width: 1023px) 100vw, 42vw" />
-          <span className={styles.sceneMonogram} aria-hidden="true">紫</span>
-          <div className={styles.nameNote}><span>AT DAWN / 清晨</span><strong>紫色朝霞</strong><small>the violet light of dawn</small></div>
-        </div>
-        <a href="#fun-facts" className={styles.scrollCue}>MORE ABOUT ME <span>↓</span></a>
-      </section>
-
       <section className={styles.portraitCarousel} aria-labelledby="portrait-carousel-title">
         <header className={styles.portraitCarouselCopy}>
           <p className={styles.eyebrow}>A FEW FRAMES OF ME</p>
@@ -126,10 +109,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className={styles.contact} aria-label="联系方式">
-        <div><p className={styles.eyebrow}>FIND ME ONLINE</p><h2>脑洞对上了，<br />就来敲我。</h2><p>Ideas welcome. Formal introductions optional.</p></div>
-        <ContactLinks className={styles.contactList} detailed />
-      </section>
     </div>
   );
 }
